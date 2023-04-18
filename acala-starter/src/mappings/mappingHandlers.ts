@@ -42,7 +42,7 @@ export async function handleCall(extrinsic: SubstrateExtrinsic): Promise<void> {
   );
   //Date type timestamp
   record.field4 = extrinsic.block.timestamp;
-  //Boolean tyep
+  //Boolean type
   record.field5 = true;
   await record.save();
 }

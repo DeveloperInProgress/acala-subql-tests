@@ -5,7 +5,7 @@ import { handler } from "../mappings/mappingHandlers";
 //const StarterEntity = bundle['StarterEntity'];
 
 subqlTest(
-    "handleBlock test - should pass",
+    "should pass: handleBlock test",
     102,
     [],
     [
@@ -22,7 +22,7 @@ subqlTest(
   );
 
   subqlTest(
-    "handleBlock test - should fail",
+    "should fail: handleBlock test",
     102,
     [],
     [
@@ -39,7 +39,7 @@ subqlTest(
   );
 
   subqlTest(
-    "handleEvent test - should pass",
+    "should pass: handleEvent test",
     1000003,
     [
       StarterEntity.create({
@@ -65,7 +65,7 @@ subqlTest(
   );
 
   subqlTest(
-    "handleEvent test - should fail",
+    "should fail: handleEvent test",
     1000003,
     [
       StarterEntity.create({
@@ -91,7 +91,7 @@ subqlTest(
   );
 
   subqlTest(
-    "handleCall test - should pass",
+    "should pass: handleCall test",
     104,
     [
       StarterEntity.create({
@@ -117,7 +117,7 @@ subqlTest(
   );
 
   subqlTest(
-    "handleCall test - should fail",
+    "should fail: handleCall test",
     104,
     [
       StarterEntity.create({

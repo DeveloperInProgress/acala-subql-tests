@@ -29,12 +29,17 @@ services:
       DB_DATABASE: postgres
       DB_HOST: postgres
       DB_PORT: 5432
+      RUN_TESTS: "false" # Set this to "true" to run tests
     volumes:
       - ./:/app
-    command:
-      - -f=/app
-      - --db-schema=app
-      - --disable-historical=false
+    command: >
+      /bin/sh -c '
+      CMD_OPTIONS="-f=/app --db-schema=app --disable-historical=false";
+      if [ "$$RUN_TESTS" = "true" ]; then
+        subql-node test $$CMD_OPTIONS;
+      else
+        subql-node $$CMD_OPTIONS;
+      fi'
     healthcheck:
       test: ["CMD", "curl", "-f", "http://subquery-node:3000/ready"]
       interval: 3s
